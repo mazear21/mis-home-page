@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import epuLogo from '../../assets/images/epu-logo.png';
 
 export default function About() {
   useEffect(() => {
-    // Reveal animations for scroll
+    // Reveal animations for scroll of fanned-out cards
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,11 +23,26 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
+
   return (
-    <div className="min-h-screen bg-[#f8f9fc] pb-24 font-sans text-gray-800 overflow-x-hidden">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-[#f8f9fc] pb-16 font-sans text-gray-800 overflow-x-hidden"
+    >
       
       {/* 1. Hero Section */}
-      <section className="pt-8 px-4 md:px-8 max-w-[1320px] mx-auto mb-20 relative">
+      <motion.section 
+        initial="hidden" 
+        animate="visible" 
+        variants={fadeUp}
+        className="pt-8 px-4 md:px-8 max-w-[1320px] mx-auto mb-16 relative"
+      >
         <div className="bg-[#1a0f4a] rounded-[2.5rem] p-10 md:p-16 lg:p-24 text-white overflow-hidden shadow-2xl relative flex flex-col lg:flex-row items-center justify-between gap-12 z-10">
           
           <div className="lg:w-1/2 relative z-20">
@@ -37,24 +54,37 @@ export default function About() {
           </div>
           
           <div className="lg:w-1/2 relative z-20 flex justify-center lg:justify-end mt-12 lg:mt-0">
-            <img src="/epu-logo.png" alt="EPU Crest" className="w-[280px] md:w-[350px] lg:w-[400px] drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" />
+            <motion.img 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              src={epuLogo} 
+              alt="EPU Crest" 
+              className="w-[280px] md:w-[350px] lg:w-[400px] drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" 
+            />
           </div>
 
           {/* Background Decorative Rings */}
           <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full border-[1px] border-white/5 pointer-events-none"></div>
           <div className="absolute top-[10%] right-[5%] w-[600px] h-[600px] rounded-full border-[1px] border-white/5 pointer-events-none"></div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 2. Technical Education Steps Section */}
-      <section className="max-w-[1320px] mx-auto px-4 md:px-8 mb-24 text-center">
+      <motion.section 
+        initial="hidden" 
+        whileInView="visible" 
+        viewport={{ once: true, margin: "-100px" }} 
+        variants={fadeUp}
+        className="max-w-[1320px] mx-auto px-4 md:px-8 mb-20 text-center"
+      >
         <div className="text-[10px] md:text-xs tracking-[0.25em] font-bold text-[#1a0f4a]/50 uppercase mb-4">Erbil Polytechnic University</div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-20 max-w-4xl mx-auto leading-tight">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-16 max-w-4xl mx-auto leading-tight">
           Technical education built around society's needs
         </h2>
 
         {/* Timeline/Steps Graphic */}
-        <div className="relative max-w-4xl mx-auto flex justify-between items-start mb-24 hidden md:flex">
+        <div className="relative max-w-4xl mx-auto flex justify-between items-start mb-20 hidden md:flex">
           <div className="absolute top-6 left-0 right-0 h-[2px] bg-[#1a0f4a]/10 z-0"></div>
           
           <div className="flex flex-col items-center w-1/3 relative z-10 px-4">
@@ -93,12 +123,18 @@ export default function About() {
             </ul>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 4. Numbers Section */}
-      <section className="max-w-[1320px] mx-auto px-4 md:px-8 mb-32 text-center">
+      <motion.section 
+        initial="hidden" 
+        whileInView="visible" 
+        viewport={{ once: true, margin: "-100px" }} 
+        variants={fadeUp}
+        className="max-w-[1320px] mx-auto px-4 md:px-8 mb-12 text-center"
+      >
         <div className="text-[10px] md:text-xs tracking-[0.25em] font-bold text-[#1a0f4a]/50 uppercase mb-4">Erbil Polytechnic University In Numbers</div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-16 max-w-4xl mx-auto leading-tight">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-12 max-w-4xl mx-auto leading-tight">
           Scale, capacity, and academic reach
         </h2>
 
@@ -109,19 +145,32 @@ export default function About() {
             { num: "37", label: "Different Majors" },
             { num: "1865", label: "Administrative Staff Members" }
           ].map((stat, i) => (
-            <div key={i} className="bg-[#1a0f4a] rounded-2xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-xl shadow-[#1a0f4a]/10">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="bg-[#1a0f4a] rounded-2xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 shadow-xl shadow-[#1a0f4a]/10"
+            >
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
               <div className="relative z-10 flex flex-col items-center">
                 <span className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-2 font-light">{stat.num}</span>
                 <span className="text-white/80 text-xs md:text-sm font-medium tracking-wide">{stat.label}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* 5. OVERLAPPING CARDS ANIMATION */}
-      <section className="mb-24 overflow-hidden pt-10 pb-32 relative">
+      <motion.section 
+        initial="hidden" 
+        whileInView="visible" 
+        viewport={{ once: true, margin: "-100px" }} 
+        variants={fadeUp}
+        className="mb-12 overflow-hidden pt-4 pb-12 relative"
+      >
         <div className="container relative flex justify-center items-center h-[400px] mx-auto scale-90 md:scale-100">
           
           <div 
@@ -158,12 +207,18 @@ export default function About() {
           </div>
           
         </div>
-      </section>
+      </motion.section>
 
       {/* 6. Our University History */}
-      <section className="max-w-[1320px] mx-auto px-4 md:px-8 mb-32 text-center">
+      <motion.section 
+        initial="hidden" 
+        whileInView="visible" 
+        viewport={{ once: true, margin: "-100px" }} 
+        variants={fadeUp}
+        className="max-w-[1320px] mx-auto px-4 md:px-8 mb-16 text-center"
+      >
         <div className="text-[10px] md:text-xs tracking-[0.25em] font-bold text-[#1a0f4a]/50 uppercase mb-4">Brighten Your Future With EPU</div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-16 max-w-4xl mx-auto leading-tight">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-12 max-w-4xl mx-auto leading-tight">
           Our University History
         </h2>
 
@@ -173,14 +228,21 @@ export default function About() {
             { year: "1996", title: "Opened", desc: "Opened under the name of 'Foundation of Technical Institutes'." },
             { year: "2012", title: "EPU Identity", desc: "Changed to Erbil Polytechnic University after the technical colleges were opened." }
           ].map((hist, i) => (
-            <div key={i} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm text-left hover:-translate-y-1 transition-transform">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6 }}
+              className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm text-left hover:-translate-y-1 transition-transform"
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="size-3 rounded-full bg-[#1a0f4a]"></div>
                 <h3 className="text-xl font-bold text-[#1a0f4a]">{hist.year}</h3>
               </div>
               <h4 className="font-bold text-gray-800 mb-2">{hist.title}</h4>
               <p className="text-gray-500 text-sm/6 leading-relaxed">{hist.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -195,12 +257,18 @@ export default function About() {
             <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="EPU Lecture Hall" className="w-full h-full object-cover min-h-[300px]" />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 7. Our Certifications */}
-      <section className="max-w-[1320px] mx-auto px-4 md:px-8 text-center pb-20">
+      <motion.section 
+        initial="hidden" 
+        whileInView="visible" 
+        viewport={{ once: true, margin: "-100px" }} 
+        variants={fadeUp}
+        className="max-w-[1320px] mx-auto px-4 md:px-8 text-center pb-12"
+      >
         <div className="text-[10px] md:text-xs tracking-[0.25em] font-bold text-[#1a0f4a]/50 uppercase mb-4">How It Works</div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-16 max-w-4xl mx-auto leading-tight">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#1a0f4a] font-serif mb-12 max-w-4xl mx-auto leading-tight">
           Our Certifications
         </h2>
 
@@ -211,17 +279,24 @@ export default function About() {
             { title: "Master", desc: "Advanced specialization" },
             { title: "Postgraduate", desc: "Higher academic progression" }
           ].map((cert, i) => (
-            <div key={i} className="bg-gradient-to-br from-white to-[#f8f9fc] rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow text-left h-[180px] flex flex-col justify-end relative overflow-hidden group">
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="bg-gradient-to-br from-white to-[#f8f9fc] rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow text-left h-[180px] flex flex-col justify-end relative overflow-hidden group"
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent z-0 transition-opacity opacity-0 group-hover:opacity-100"></div>
               <div className="relative z-10">
                 <h3 className="text-xl font-bold text-[#1a0f4a] mb-2">{cert.title}</h3>
                 <p className="text-gray-500 text-sm">{cert.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-    </div>
+    </motion.div>
   );
 }
