@@ -67,11 +67,16 @@ export default function History() {
               History of EPU
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Historic EPU moment" 
-                className="w-full md:w-1/3 rounded-xl shadow-md object-cover aspect-[4/3] relative z-10 border border-white/10"
-              />
+              <div className="history-uiverse-stack shrink-0 w-full md:w-1/3 mb-6 md:mb-0 relative z-10">
+                  <div className="history-uiverse-card">
+                    <div className="history-uiverse-image">
+                      <img 
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        alt="Historic EPU moment"
+                      />
+                    </div>
+                  </div>
+                </div>
               <div className="prose prose-lg premium-text w-full md:w-2/3 relative z-10">
                 <p className="mb-4">
                   The EPU is the offshoot of Foundation of Technical Education, which was founded by Kurdistan Parliament in 1993 under the name of Foundation of Technical Institutes. It started working effectively to run the Technical Institutes in 1996.
