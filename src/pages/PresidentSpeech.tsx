@@ -52,7 +52,7 @@ export default function PresidentSpeech() {
               <div className="absolute inset-0 bg-gradient-to-tr from-[#ffb700] to-[#1a0f4a] rounded-2xl transform rotate-3 scale-105 opacity-50 blur-lg"></div>
               <img 
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="University President" 
+                alt="Prof. Dr. Edrees Muhammad Harki" 
                 className="relative z-10 w-64 md:w-80 h-auto rounded-2xl shadow-2xl border-4 border-white/10 object-cover aspect-[3/4]"
               />
             </div>
@@ -82,7 +82,7 @@ export default function PresidentSpeech() {
               After my selection to lead the Erbil Polytechnic University in April 2022, I immediately began to try to understand the environment of our university. Accordingly, I resolved to develop EPU into a university dedicated to meeting the needs of our community by providing students and faculty the best quality of classroom education, professional development and technical excellence in preparation for service in our fast-paced, technologically-advanced world. 
             </p>
 
-            <blockquote className="my-10 pl-6 border-l-4 border-[#ffb700] text-xl md:text-2xl text-[#1a0f4a] font-serif italic leading-relaxed">
+            <blockquote className="my-10 pl-6 border-l-4 border-[#1C0770] text-xl md:text-2xl text-[#1a0f4a] font-serif italic leading-relaxed">
               At EPU, we place great emphasis on practical learning; learning which is appropriate for meeting the needs of our community.
             </blockquote>
             
@@ -108,7 +108,8 @@ export default function PresidentSpeech() {
 
             <div className="mt-12 pt-8 border-t border-gray-100 flex items-center justify-between">
               <div>
-                <p className="text-sm font-bold text-[#1a0f4a] uppercase tracking-widest">Office of the President</p>
+                <p className="text-xl font-serif text-[#1a0f4a] mb-1">Prof. Dr. Edrees Muhammad Harki</p>
+                <p className="text-sm font-bold text-[#1a0f4a] uppercase tracking-widest">President of the University</p>
                 <p className="text-xs text-gray-400 mt-1">Erbil Polytechnic University</p>
               </div>
             </div>
@@ -181,7 +182,7 @@ export default function PresidentSpeech() {
           <h2 className="text-3xl md:text-4xl font-serif text-[#1a0f4a] mb-6">Join our thriving community</h2>
           <p className="text-gray-500 text-lg mb-10">Discover your path at Erbil Polytechnic University and make an impact on the world.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/" className="px-8 py-4 bg-[#1a0f4a] text-white rounded-xl font-bold tracking-wide hover:bg-[#2c1c7a] hover:shadow-lg transition-all flex items-center justify-center gap-2 group w-full sm:w-auto">
+            <Link to="/" style={{ color: "white" }} className="px-8 py-4 bg-[#1a0f4a] text-white rounded-xl font-bold tracking-wide hover:bg-[#2c1c7a] hover:shadow-lg transition-all flex items-center justify-center gap-2 group w-full sm:w-auto">
               Explore Programs <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link to="/about" className="px-8 py-4 bg-gray-50 text-gray-700 rounded-xl font-bold tracking-wide hover:bg-gray-100 transition-all text-center w-full sm:w-auto">

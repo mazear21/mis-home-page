@@ -5,6 +5,7 @@ import epuLogo from '../../assets/images/epu-logo.png';
 
 export default function About() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Reveal animations for scroll of fanned-out cards
     const observer = new IntersectionObserver(
       (entries) => {
