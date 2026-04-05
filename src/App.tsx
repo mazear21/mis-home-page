@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import History from './pages/History';
+import PresidentSpeech from './pages/PresidentSpeech';
 import Home from './pages/Home';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/index.html" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/history" element={<History />} />
+            <Route path="/president-message" element={<PresidentSpeech />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
