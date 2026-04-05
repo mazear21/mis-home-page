@@ -27,7 +27,7 @@ export const navGroups: NavGroup[] = [
         items: [
           { title: "About EPU", href: "/about" },
           { title: "History of EPU", href: "/history" },
-          { title: "University President Speech", href: "/about" },
+          { title: "University President Speech", href: "/president-message" },
           { title: "University Board", href: "/about" },
           { title: "Administration", href: "/about" },
           { title: "Vision Statement", href: "/about" },
