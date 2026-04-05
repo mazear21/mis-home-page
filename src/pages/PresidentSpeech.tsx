@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Lightbulb, Users, Globe, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function PresidentSpeech() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
