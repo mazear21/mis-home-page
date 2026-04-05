@@ -2134,3 +2134,63 @@ button {
   object-fit: cover;
   display: block;
 }
+
+/* From Uiverse.io by janisar-hyder */ 
+.history-stack {
+  width: 100%;
+  max-width: 400px;
+  transition: 0.25s ease;
+}
+.history-stack:hover {
+  transform: rotate(5deg);
+}
+.history-stack:hover .history-card:before {
+  transform: translatey(-2%) rotate(-4deg);
+}
+.history-stack:hover .history-card:after {
+  transform: translatey(2%) rotate(4deg);
+}
+.history-card {
+  aspect-ratio: 3 / 2;
+  border: 4px solid #1a0f4a;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5% 5% 15% 5%;
+}
+.history-card:before,
+.history-card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #1a0f4a;
+  background-color: #fff;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: -4px;
+  left: -4px;
+}
+.history-card:before {
+  transform: translatey(-2%) rotate(-6deg);
+}
+.history-card:after {
+  transform: translatey(2%) rotate(6deg);
+}
+.history-image {
+  width: 100%;
+  border: 4px solid #1a0f4a;
+  background-color: #eee;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+.history-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
