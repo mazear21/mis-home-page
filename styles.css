@@ -2194,3 +2194,72 @@ button {
   object-fit: cover;
   display: block;
 }
+
+/* From Uiverse.io by janisar-hyder */ 
+.history-uiverse-stack {
+  width: 100%;
+  max-width: 400px;
+  transition: 0.25s ease;
+}
+
+.history-uiverse-stack:hover {
+  transform: rotate(5deg);
+}
+
+.history-uiverse-stack:hover .history-uiverse-card:before {
+  transform: translatey(-2%) rotate(-4deg);
+}
+
+.history-uiverse-stack:hover .history-uiverse-card:after {
+  transform: translatey(2%) rotate(4deg);
+}
+
+.history-uiverse-card {
+  aspect-ratio: 3 / 2;
+  border: 4px solid #1a0f4a;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5% 5% 15% 5%;
+}
+
+.history-uiverse-card:before,
+.history-uiverse-card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #1a0f4a;
+  background-color: #fff;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.history-uiverse-card:before {
+  transform: translatey(-2%) rotate(-6deg);
+}
+
+.history-uiverse-card:after {
+  transform: translatey(2%) rotate(6deg);
+}
+
+.history-uiverse-image {
+  width: 100%;
+  border: 4px solid #1a0f4a;
+  background-color: #eee;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-uiverse-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
