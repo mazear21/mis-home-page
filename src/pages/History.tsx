@@ -70,10 +70,16 @@ export default function History() {
               <div className="history-uiverse-stack shrink-0 w-full md:w-1/3 mb-6 md:mb-0 relative z-10">
                   <div className="history-uiverse-card">
                     <div className="history-uiverse-image">
+                      <div className="history-uiverse-stack shrink-0 w-full md:w-1/3 mb-6 md:mb-0 relative z-10">
+                  <div className="history-uiverse-card">
+                    <div className="history-uiverse-image">
                       <img 
                         src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                         alt="Historic EPU moment"
                       />
+                    </div>
+                  </div>
+                </div>
                     </div>
                   </div>
                 </div>
